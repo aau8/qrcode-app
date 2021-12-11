@@ -1,0 +1,132 @@
+.frame-size {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+}
+
+.frame-size__elem {
+    
+    &:not(:first-child) {
+        margin: 0 0 0 16px;
+    }
+}
+
+// Выбор устройств с готовыми разрешениями
+.frame-select {
+    position: relative;
+    z-index: 1;
+
+    &._open {
+
+        & .frame-select__body {
+            visibility: visible;
+            opacity: 1;
+            bottom: 0;
+            pointer-events: all;
+        }
+
+        &.frame-select_arrow {
+
+            & .frame-select__header-icon {
+                transform: scale(-1, -1);
+            }
+        }
+    }
+}
+
+.frame-select__header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.frame-select__header-text {
+    font-size: 15px;
+}
+
+.frame-select__header-icon {
+    width: 14px;
+    height: 14px;
+    margin: 0 0 0 6px;
+    transition: $tr;
+}
+
+.frame-select__body {
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: fit-content;
+    transform: translate(-50%, 100%);
+    background: #fff;
+    border-radius: 2px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.1);
+    padding: 6px 0;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: $tr;
+}
+
+.frame-select__list {
+
+}
+
+.frame-select__item {
+    display: flex;
+    align-items: center;
+    padding: 4px 12px;
+    transition: $tr;
+    cursor: pointer;
+
+    &:hover {
+        background: rgba(0,0,0,.03);
+    }
+
+    &._selected {
+
+        & .frame-select__item-icon {
+            opacity: 1;
+        }
+    }
+}
+
+.frame-select__item-icon {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    opacity: 0;
+    transition: $tr;
+}
+
+.frame-select__item-title {
+    font-size: 15px;
+    margin: 0 0 0 6px;
+}
+
+// Ручная настройка
+.frame-size-setup {
+    display: flex;
+    align-items: center;
+}
+
+.frame-size-setup__input {
+    width: 70px;
+    
+    & input {
+        width: 100%;
+        height: 100%;
+        padding: 5px 0;
+        border: 1px solid $outline;
+        border-radius: 2px;
+        font-family: sans-serif;
+        font-size: 15px;
+        text-align: center;
+    }
+}
+
+.frame-size-setup__separator {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    margin: 0 6px;
+}

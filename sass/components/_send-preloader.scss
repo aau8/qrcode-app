@@ -1,0 +1,28 @@
+.send-preloader {
+    position: relative;
+    pointer-events: none;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $accent;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 20px;
+        height: 20px;
+        transform: translate(-50%, -50%);
+        background: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 10C20 8.02219 19.4135 6.08879 18.3147 4.4443C17.2159 2.79981 15.6541 1.51808 13.8268 0.761205C11.9996 0.00432834 9.98891 -0.193705 8.0491 0.192147C6.10929 0.577999 4.32746 1.53041 2.92893 2.92893C1.53041 4.32746 0.577999 6.10929 0.192147 8.0491C-0.193705 9.98891 0.00432836 11.9996 0.761205 13.8268C1.51808 15.6541 2.79981 17.2159 4.4443 18.3147C6.08879 19.4135 8.02219 20 10 20L10 17C8.61553 17 7.26215 16.5895 6.11101 15.8203C4.95986 15.0511 4.06266 13.9579 3.53284 12.6788C3.00303 11.3997 2.86441 9.99223 3.1345 8.63437C3.4046 7.2765 4.07128 6.02922 5.05025 5.05025C6.02922 4.07128 7.2765 3.4046 8.63437 3.1345C9.99223 2.86441 11.3997 3.00303 12.6788 3.53284C13.9579 4.06266 15.0511 4.95986 15.8203 6.11101C16.5895 7.26215 17 8.61553 17 10H20Z' fill='white'/%3E%3C/svg%3E") no-repeat;
+        background-position: center center;
+        background-size: contain;
+        animation: sendPreloader 1.3s linear infinite;
+    }
+}
